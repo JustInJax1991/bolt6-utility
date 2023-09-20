@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bolt6utility-dev-103312-authRole",
+      "UnauthRoleArn": "arn:aws:iam::110753343434:role/amplify-bolt6utility-dev-103312-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::110753343434:role/amplify-bolt6utility-dev-103312-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-bolt6utility-dev-103312-deployment",
+      "UnauthRoleName": "amplify-bolt6utility-dev-103312-unauthRole",
+      "StackName": "amplify-bolt6utility-dev-103312",
+      "StackId": "arn:aws:cloudformation:us-east-2:110753343434:stack/amplify-bolt6utility-dev-103312/a1c1d210-57c2-11ee-a976-06648ef4ddc1",
+      "AmplifyAppId": "d25g374hgh19ga"
+    }
+  }
+}
