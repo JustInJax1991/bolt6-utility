@@ -39,6 +39,5 @@ class NavBar extends React.Component {
   } 
 }
 
-class 
 
 export default App;
