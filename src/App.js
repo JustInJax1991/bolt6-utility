@@ -3,33 +3,28 @@ import './App.css';
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
 import '@aws-amplify/ui-react/styles.css';
+import React, { Component } from 'react';
 Amplify.configure(awsExports);
 
 function App() {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <NavBar />
+  );
+}
+
+class NavBar extends React.Component {
+  render() {
+    return(
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+  <a class="navbar-brand" href="#">
+      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+      Bolt6 Utility
+    </a>
   </div>
 </nav>
   );
+  } 
 }
 
 export default App;
