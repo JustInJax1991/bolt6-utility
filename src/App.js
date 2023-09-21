@@ -5,12 +5,18 @@ import awsExports from './aws-exports';
 import '@aws-amplify/ui-react/styles.css';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBolt } from '@fortawesome/free-solid-svg-icons' 
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import background from './electric-background1.png'
 Amplify.configure(awsExports);
 
 function App() {
   return (
-    <div>
+    <div style={{ 
+      backgroundImage:  `url(${background})`,
+      backgroundSize: 'cover',
+      width: '100vw',
+      height: '100vh'
+      }}>
       <NavBar />
       <TileContainer />  
     </div>
@@ -20,9 +26,9 @@ function App() {
 class NavBar extends React.Component {
   render() {
     return(
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg" style={{ backgroundColor: '#224193'}}>
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#" style={{color: '#DF3C5F'}}>
       <FontAwesomeIcon icon={faBolt}></FontAwesomeIcon>
       Bolt6 Utility
     </a>
