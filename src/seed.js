@@ -1,31 +1,46 @@
-window.Seed = (function () {
-  
-  const cards = [
+    export const cards = [
     {
       id: 1,
       title: 'Restart Replay',
-      description: 'On-demand sand castle construction expertise.',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       param: ['1', '2', '3']
     },
     {
       id: 2,
       title: 'Restart Pod',
-      description: 'Earn points when your favorite politicians pass legislation.',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       param: ['1', '2', '3']
     },
     {
       id: 3,
-      title: '',
-      description: 'We already have your measurements and shipping address.',
+      title: 'Title 3',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       param: ['1', '2', '3']
     },
     {
       id: 4,
-      title: 'Haught or Naught',
-      description: 'High-minded or absent-minded? You decide.',
+      title: 'Title 4',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      param: ['1', '2', '3']
+    },
+    {
+      id: 5,
+      title: 'Title 5',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      param: ['1', '2', '3']
+    },
+    {
+      id: 6,
+      title: 'Title 6',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      param: ['1', '2', '3']
+    },
+    {
+      id: 7,
+      title: 'Title 7',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       param: ['1', '2', '3']
     },
   ];
 
-  return { cards: cards };
-}());
+ 

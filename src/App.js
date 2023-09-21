@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import background from './electric-background1.png'
+import {cards} from './seed.js'
 Amplify.configure(awsExports);
 
 function App() {
@@ -51,25 +52,22 @@ class NavBar extends React.Component {
 
 class TileContainer extends React.Component {
   render() {
+
+    const Tiles = cards
+    const TileComponents = Tiles.map((tile) => (
+      <Tile
+      key={'tile-' + tile.id}
+      id={tile.id}
+      title={tile.title}
+      description={tile.description}
+      param={tile.param}
+      />
+    ));
     return (
       <div className="container-fluid">
-        <div class="d-flex flex-row justify-content-evenly mt-4">
-        <div class="card" style={{width: "18rem"}}>
-          <div class="card-body">
-            <Tile/>
-          </div>
+        <div class="d-flex flex-row flex-wrap justify-content-evenly">
+          {TileComponents}
         </div>
-        <div class="card" style={{width: "18rem"}}>
-          <div class="card-body">
-            <Tile/>
-          </div>
-        </div>
-        <div class="card" style={{width: "18rem"}}>
-          <div class="card-body">
-            <Tile/>
-          </div>
-        </div>
-      </div>
       </div>
         
     );
@@ -77,20 +75,23 @@ class TileContainer extends React.Component {
 }
 
 class Tile extends React.Component {
+  
   render() {
     return (
-      <div class="card-body">
-       <h5 class="card-title">Card title</h5>
-       <p class="card-text">Some quick example text to build on the card title</p>    
-       <ul class="list-group list-group-flush">
-    <li class="list-group-item"><TileParams/></li>
-    <li class="list-group-item"><TileParams/></li>
-    <li class="list-group-item"><TileParams/></li>
-  </ul>
-  <div class="d-grid gap-2 col-8 mx-auto">
-  <button class="btn btn-success" type="button">Submit-Lambda</button>
-  </div>
-  </div>
+      <div class="card m-4" style={{width: "18rem"}}>
+        <div class="card-body">
+            <h5 class="card-title">{this.props.title}</h5>
+            <p class="card-text">{this.props.description}</p>    
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><TileParams/></li>
+              <li class="list-group-item"><TileParams/></li>
+              <li class="list-group-item"><TileParams/></li>
+            </ul>           
+          <div class="d-grid gap-2 col-8 mx-auto">
+            <button class="btn btn-success" type="button">Submit-Lambda</button>
+          </div>
+        </div>
+      </div>
     );
   }
 }
