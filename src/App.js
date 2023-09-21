@@ -77,15 +77,21 @@ class TileContainer extends React.Component {
 class Tile extends React.Component {
   
   render() {
+
+    const parameters = this.props.param.map((parameter) => (
+      <TileParams
+      paramname={parameter.label}
+      parameter={parameter.options}
+      />
+    ));
+
     return (
       <div class="card m-4" style={{width: "18rem"}}>
         <div class="card-body">
             <h5 class="card-title">{this.props.title}</h5>
             <p class="card-text">{this.props.description}</p>    
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><TileParams/></li>
-              <li class="list-group-item"><TileParams/></li>
-              <li class="list-group-item"><TileParams/></li>
+              {parameters}
             </ul>           
           <div class="d-grid gap-2 col-8 mx-auto">
             <button class="btn btn-success" type="button">Submit-Lambda</button>
@@ -98,14 +104,30 @@ class Tile extends React.Component {
 
 class TileParams extends React.Component {
   render() {
+    
+    const paramdropdown = this.props.parameter.options.map((option) => (
+      <ParamsOption
+      value={option}
+      />
+    )); 
+    
     return (
+      <li class="list-group-item">
       <select class="form-select" aria-label="Default select example">
-      <option selected>Parameter Name</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
+      <option selected>{this.props.paramname}</option>
+        {paramdropdown}
     </select>
+    </li>
     );
   }
+}
+
+class ParamsOption extends React.Component {
+    render() {
+      return (
+        <option value={this.props.value}>{this.props.value}</option>
+      )
+    }
 }
 
 
