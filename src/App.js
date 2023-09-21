@@ -10,7 +10,10 @@ Amplify.configure(awsExports);
 
 function App() {
   return (
-    <NavBar />
+    <div>
+      <NavBar />
+      <TileContainer />  
+    </div>
   );
 }
 
@@ -38,6 +41,66 @@ class NavBar extends React.Component {
   );
   } 
 }
+
+
+class TileContainer extends React.Component {
+  render() {
+    return (
+      <div className="container-fluid">
+        <div class="d-flex flex-row justify-content-evenly mt-4">
+        <div class="card" style={{width: "18rem"}}>
+          <div class="card-body">
+            <Tile/>
+          </div>
+        </div>
+        <div class="card" style={{width: "18rem"}}>
+          <div class="card-body">
+            <Tile/>
+          </div>
+        </div>
+        <div class="card" style={{width: "18rem"}}>
+          <div class="card-body">
+            <Tile/>
+          </div>
+        </div>
+      </div>
+      </div>
+        
+    );
+  }
+}
+
+class Tile extends React.Component {
+  render() {
+    return (
+      <div class="card-body">
+       <h5 class="card-title">Card title</h5>
+       <p class="card-text">Some quick example text to build on the card title</p>    
+       <ul class="list-group list-group-flush">
+    <li class="list-group-item"><TileParams/></li>
+    <li class="list-group-item"><TileParams/></li>
+    <li class="list-group-item"><TileParams/></li>
+  </ul>
+  <div class="d-grid gap-2 col-8 mx-auto">
+  <button class="btn btn-success" type="button">Submit-Lambda</button>
+  </div>
+  </div>
+    );
+  }
+}
+
+class TileParams extends React.Component {
+  render() {
+    return (
+      <select class="form-select" aria-label="Default select example">
+      <option selected>Parameter Name</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    );
+  }
+}
+
 
 
 export default App;
