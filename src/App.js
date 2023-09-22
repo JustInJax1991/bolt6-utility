@@ -15,8 +15,7 @@ function App() {
     <div style={{ 
       backgroundImage:  `url(${background})`,
       backgroundSize: 'cover',
-      width: '100vw',
-      height: '100vh'
+      backgroundAttachment: "fixed"
       }}>
       <NavBar />
       <TileContainer />  
@@ -87,15 +86,15 @@ class Tile extends React.Component {
     ));
 
     return (
-      <div class="card m-4" style={{width: "18rem"}}>
+      <div class="card m-4" style={{width: "18rem", backgroundColor: "#6F9BD1", opacity: "0.9", color: "#224193"}}>
         <div class="card-body">
             <h5 class="card-title">{this.props.title}</h5>
             <p class="card-text">{this.props.description}</p>    
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush" >
               {parameters}
             </ul>           
           <div class="d-grid gap-2 col-8 mx-auto">
-            <button class="btn btn-success" type="button">Submit-Lambda</button>
+            <button class="btn btn-success" type="button" style={{backgroundColor: "#DF3C5F"}}>Submit-Lambda</button>
           </div>
         </div>
       </div>
@@ -113,9 +112,9 @@ class TileParams extends React.Component {
     )); 
     
     return (
-      <li class="list-group-item">
+      <li class="list-group-item" style={{backgroundColor: "#6F9BD1"}}>
       <select class="form-select" aria-label="Default select example">
-      <option selected>{this.props.paramname}</option>
+      <option selected style={{color: "#224193"}}>{this.props.paramname}</option>
       {paramdropdown}
     </select>
     </li>
@@ -126,7 +125,7 @@ class TileParams extends React.Component {
 class ParamsOption extends React.Component {
     render() {
       return (
-        <option value={this.props.value}>{this.props.value}</option>
+        <option value={this.props.value} style={{color: "#224193"}}>{this.props.value}</option>
       )
     }
 }
