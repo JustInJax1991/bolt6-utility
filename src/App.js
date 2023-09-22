@@ -80,6 +80,7 @@ class Tile extends React.Component {
 
     const parameters = this.props.param.map((parameter) => (
       <TileParams
+      key={'parameter-' + parameter.id}
       paramname={parameter.label}
       parameter={parameter.options}
       />
@@ -105,7 +106,7 @@ class Tile extends React.Component {
 class TileParams extends React.Component {
   render() {
     
-    const paramdropdown = this.props.parameter.options.map((option) => (
+    const paramdropdown = this.props.parameter.map((option) => (
       <ParamsOption
       value={option}
       />
@@ -115,7 +116,7 @@ class TileParams extends React.Component {
       <li class="list-group-item">
       <select class="form-select" aria-label="Default select example">
       <option selected>{this.props.paramname}</option>
-        {paramdropdown}
+      {paramdropdown}
     </select>
     </li>
     );
